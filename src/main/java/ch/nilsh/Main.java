@@ -55,5 +55,20 @@ public class Main {
             }
         });
         frame.add(progressBar);
+
+        // Add button to start the progress bar
+        JButton btnStart = new JButton("Start");
+        btnStart.setBounds(50, 100, 200, 30);
+        btnStart.addActionListener(event -> new Thread(() -> {
+            while (progressBar.getValue() < progressBar.getMaximum()) {
+                try {
+                    progressBar.setValue(progressBar.getValue() + 1);
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }).start());
+        frame.add(btnStart);
     }
 }
