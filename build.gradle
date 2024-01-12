@@ -29,13 +29,6 @@ jar {
     manifest {
         attributes([
                 'Main-Class'              : application.mainClass,
-                "Specification-Title"     : project.name,
-                "Specification-Vendor"    : "Nils Hindermann",
-                "Specification-Version"   : "1", // We are version 1 of ourselves
-                "Implementation-Title"    : project.name,
-                "Implementation-Version"  : jar.archiveVersion,
-                "Implementation-Vendor"   : "Nils Hindermann",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
                 'Java-Version'            : "${System.getProperty('java.vm.version')} (${System.getProperty('java.vm.vendor')})",
                 'Built-On-Minecraft'      : mc_version
         ])
