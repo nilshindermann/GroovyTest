@@ -11,6 +11,8 @@ group = 'ch.nilsh'
 
 //apply from: 'https://raw.githubusercontent.com/nilshindermann/Common/main/common.gradle'
 
+println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
+
 java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(17))
@@ -50,14 +52,14 @@ publishing {
     }
     repositories {
         maven {
-            url "file://${project.projectDir}/repo"
+            url "file://$projectDir/repo"
         }
     }
 }
 
 tasks.register('printVersion') {
     doLast {
-        println "version=${project.version}"
+        println "version=$version"
     }
 }
 
