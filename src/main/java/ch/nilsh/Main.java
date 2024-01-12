@@ -18,5 +18,12 @@ public class Main {
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setVisible(true);
+        frame.setLayout(null);
+
+        // Add example button
+        JButton btnExample = new JButton("Example Button");
+        btnExample.setBounds(50, 50, 200, 30);
+        btnExample.addActionListener(event -> JOptionPane.showMessageDialog(frame, "You just clicked the button!"));
+        frame.add(btnExample);
     }
 }
