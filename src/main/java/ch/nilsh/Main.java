@@ -1,6 +1,8 @@
 package ch.nilsh;
 
 import javax.swing.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 /**
  * Simple main class
@@ -25,5 +27,33 @@ public class Main {
         btnExample.setBounds(50, 50, 200, 30);
         btnExample.addActionListener(event -> JOptionPane.showMessageDialog(frame, "You just clicked the button!"));
         frame.add(btnExample);
+
+        // Add progress bar
+        JProgressBar progressBar = new JProgressBar();
+        progressBar.setBounds(50, 200, 400, 30);
+        progressBar.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                JProgressBar bar = (JProgressBar) e.getSource();
+                bar.setValue(bar.getMinimum());
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+            }
+        });
+        frame.add(progressBar);
     }
 }
