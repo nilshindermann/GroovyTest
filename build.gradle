@@ -59,14 +59,14 @@ publishing {
     }
     repositories {
         maven {
-            url "file://${project.projectDir}/repo"
+            url "file://$projectDir/repo"
         }
     }
 }
 
 tasks.register('printVersion') {
     doLast {
-        println "version=${project.version}"
+        println "version=$version"
     }
 }
 
