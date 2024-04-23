@@ -6,8 +6,11 @@ plugins {
 }
 
 version = "$mc_version-$mod_version"
-archivesBaseName = project.name
 group = 'ch.nilsh'
+
+base {
+    archivesName = project.name
+}
 
 //apply from: 'https://raw.githubusercontent.com/nilshindermann/Common/main/common.gradle'
 
@@ -15,7 +18,7 @@ println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getPro
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(17))
+        languageVersion = JavaLanguageVersion.of(21)
     }
 
     withSourcesJar()
